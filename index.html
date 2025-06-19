@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background: #f7f7f7;
+    }
+    .counter {
+      font-size: 60px;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+    .buttons button {
+      font-size: 30px;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .plus {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .minus {
+      background-color: #f44336;
+      color: white;
+    }
+    .buttons button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Counter By Javascript</h1>
+  <div class="counter" id="counter">0</div>
+  <div class="buttons">
+    <button class="minus" onclick="decrease()">−</button>
+    <button class="plus" onclick="increase()">+</button>
+  </div>
+
+  <script>
+    let count = 0;
+    const counter = document.getElementById('counter');
+
+    function updateDisplay() {
+      counter.textContent = count;
+    }
+
+    function increase() {
+      if (count < 50) {
+        count++;
+        updateDisplay();
+      }
+    }
+
+    function decrease() {
+      if (count > 0) {
+        count--;
+        updateDisplay();
+      }
+    }
+  </script>
+
+</body>
+</html>
